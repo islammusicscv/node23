@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { DatabaseModule } from './database/database.module';
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {ConfigModule} from "@nestjs/config";
+import { CategoriesModule } from './categories/categories.module';
 import * as process from "process";
 
 
@@ -14,6 +15,7 @@ import * as process from "process";
           isGlobal: true
       }),
       UserModule,
+      CategoriesModule,
       DatabaseModule,
       TypeOrmModule.forRoot({
         type: 'postgres',
@@ -26,6 +28,7 @@ import * as process from "process";
           entities: [ ],
           synchronize: true
       })
+
   ],
   controllers: [AppController],
   providers: [AppService],
