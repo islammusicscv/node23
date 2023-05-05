@@ -7,6 +7,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
 import {ConfigModule} from "@nestjs/config";
 import { CategoriesModule } from './categories/categories.module';
 import { AuthModule } from './auth/auth.module';
+import { BlogModule } from './blog/blog.module';
 import * as process from "process";
 
 
@@ -29,7 +30,8 @@ import * as process from "process";
           entities: [ ],
           synchronize: true
       }),
-      AuthModule
+      AuthModule,
+      BlogModule
 
   ],
   controllers: [AppController],
