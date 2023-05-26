@@ -35,6 +35,14 @@ export class BlogService {
     );
   }
 
+    async findByCategoryId(id: number): Promise<Blog[]> {
+        return await this.blogRepository.find(
+            {
+                where: {category: {id}}
+            }
+        );
+    }
+
   async update(id: number, updateBlogDto: UpdateBlogDto): Promise<Blog> {
     await this.blogRepository.update(id, updateBlogDto);
     return this.findOne(id);
